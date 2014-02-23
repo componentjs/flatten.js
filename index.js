@@ -1,8 +1,6 @@
 var semver = require('semver')
 
 /**
- * This probably belongs to a separate repo, but I'm lazy.
- *
  * returns the tree nodes, not the component.json,
  * so you can handle the resolved deps yourself.
  *

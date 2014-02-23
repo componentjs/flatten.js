@@ -1,4 +1,4 @@
-# Compnent Flatten
+# Component Flatten
 
 `.flatten()` command in [component-resolver](https://github.com/component/resolver.js). Stored in a separate repo for standalone usage, but tests are included in `resolver.js` for simplicity. Use `npm link` to test.
 
