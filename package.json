@@ -1,0 +1,26 @@
+{
+  "name": "component-flatten",
+  "description": "flatten a resolved component tree",
+  "version": "0.0.0",
+  "author": {
+    "name": "Jonathan Ong",
+    "email": "me@jongleberry.com",
+    "url": "http://jongleberry.com",
+    "twitter": "https://twitter.com/jongleberry"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/component/flatten.js.git"
+  },
+  "bugs": {
+    "mail": "me@jongleberry.com",
+    "url": "https://github.com/component/flatten.js/issues"
+  },
+  "dependencies": {
+    "semver": "^2.2.1"
+  },
+  "peerDependencies": {
+    "component-resolver": "*"
+  }
+}
