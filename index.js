@@ -21,8 +21,6 @@ module.exports = function (tree, check) {
 
   // duplicate dependencies
   var duplicates = {};
-  // local name conflicts
-  var conflicts = {};
 
   traverse(tree)
 
@@ -46,24 +44,8 @@ module.exports = function (tree, check) {
     })
   })
 
-  // check for duplicate local names
-  if (check) {
-    var localnames = {};
-    locals.forEach(function (local) {
-      var name = local.name;
-      (localnames[name] = localnames[name] || [])
-      .push(local);
-    });
-    Object.keys(localnames).forEach(function (name) {
-      if (localnames[name].length > 1) conflicts[name] = localnames[name];
-    });
-  }
-
   var out = dependencies.concat(locals);
-  if (check) {
-    out.duplicates = duplicates;
-    out.conflicts = conflicts;
-  }
+  if (check) out.duplicates = duplicates;
   return out;
 
   function traverse(branch) {
