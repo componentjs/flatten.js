@@ -9,7 +9,6 @@ The purpose of this method is to:
   2. Local dependencies
   3. Component's files
 - Check for multiple versions of a remote dependency
-- Check for locals with conflicting names.
 
 ## API
 
@@ -24,12 +23,11 @@ resolver().getTree(function (err, tree) {
 })
 ```
 
-### var nodes[] = flatten(tree, [check])
+### var nodes[] = flatten(tree)
 
-`tree` is the result of `resolver`'s `.tree()` or `.getTree()` methods. If `check` is true, nodes will be populated with:
+`tree` is the result of `resolver`'s `.tree()` or `.getTree()` methods. Nodes will also be populated with:
 
 - `.duplicates` - an object containing remote dependencies with multiple versions
-- `.conflicts` - an object containing local dependencies who have the same name
 
 ## License
 

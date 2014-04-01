@@ -1,19 +1,16 @@
+
 var semver = require('semver')
 
 /**
  * returns the tree nodes, not the component.json,
  * so you can handle the resolved deps yourself.
  *
- * If `check` is true, this will check for duplicate dependencies
- * as well as locals with the same name.
- *
  * @param {Object} tree
- * @param {Boolean} check
  * @return {Array}
  * @api public
  */
 
-module.exports = function (tree, check) {
+module.exports = function (tree) {
   var resolved = []
   var deps = {}
   var dependencies = []
@@ -29,7 +26,7 @@ module.exports = function (tree, check) {
     var branches = deps[name]
     var releases = Object.keys(branches)
     // duplicates detected
-    if (check && releases.length > 1) duplicates[name] = branches;
+    if (releases.length > 1) duplicates[name] = branches;
     releases
     // non semver releases first
     .filter(function (release) {
@@ -45,7 +42,7 @@ module.exports = function (tree, check) {
   })
 
   var out = dependencies.concat(locals);
-  if (check) out.duplicates = duplicates;
+  out.duplicates = duplicates;
   return out;
 
   function traverse(branch) {
