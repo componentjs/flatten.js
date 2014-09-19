@@ -12,5 +12,5 @@
   "repository": "component/flatten.js",
   "dependencies": {
     "semver": "^2.2.1"
-  },
+  }
 }
