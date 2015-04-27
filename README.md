@@ -1,6 +1,6 @@
 # Component Flatten
 
-`.flatten()` command in [component-resolver](https://github.com/component/resolver.js). Stored in a separate repo for standalone usag.
+`.flatten()` command in [component-resolver](https://github.com/component/resolver.js). Stored in a separate repo for standalone usage.
 
 The purpose of this method is to:
 
@@ -14,7 +14,7 @@ The purpose of this method is to:
 
 ```js
 var resolver = require('component-resolver');
-var flatten = require('flatten');
+var flatten = require('component-flatten');
 
 resolver().getTree(function (err, tree) {
   if (err) throw err;
